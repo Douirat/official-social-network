@@ -1,13 +1,18 @@
-import { DefaultSerializer } from "v8"
-
 // Create the general type for authentification:
-export interface AuthentificationContext {
-    // user: (User | null)
-    islogin: (user: any)=>void,
-    // Logout: ()=>void
+export default interface AuthentificationContext {
+   isLoggedIn: boolean;
+   login: ()=>void;
+   logout: ()=>void;
 }
 
 // Create a type for the user to help me with decifering user related data comming from the back end authenticate the user:
-export default interface User {
-
+export interface User {
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    dateOfBirth: Date;
+    avatar?: string;
+    nickname?: string;
+    aboutMe?: string;
 }
